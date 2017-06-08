@@ -7,8 +7,7 @@ module.exports = function (config) {
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-firefox-launcher'),
+      require('karma-webdriver-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma')
@@ -28,8 +27,26 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: ['Chrome', 'Firefox'],
+    browsers: ['Chrome-selenium', 'Firefox-selenium'],
     concurrency: 2,
+    customLaunchers: {
+      'Chrome-selenium': {
+        base: 'WebDriver',
+        config: {
+          hostname: 'localhost',
+          port: 4444
+        },
+        browserName: 'chrome',
+      },
+      'Firefox-selenium': {
+        base: 'WebDriver',
+        config: {
+          hostname: 'localhost',
+          port: 4444
+        },
+        browserName: 'firefox',
+      }
+    },
     singleRun: false
   });
 };

@@ -10,8 +10,10 @@ exports.config = {
   ],
   maxSessions : 2,
   multiCapabilities: [{
+    'seleniumAddress': 'http://localhost:4444/wd/hub',
     'browserName': 'chrome'
   }, {
+    'seleniumAddress': 'http://localhost:4444/wd/hub',
     'browserName': 'firefox'
   }],
   directConnect: false,
