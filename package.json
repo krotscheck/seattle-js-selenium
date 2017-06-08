@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "demo": "yarn test; yarn e2e",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
     "test": "karma start --single-run",
     "lint": "ng lint",

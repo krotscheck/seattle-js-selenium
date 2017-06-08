@@ -17,7 +17,7 @@ exports.config = {
     'browserName': 'firefox'
   }],
   directConnect: false,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: `http://${ require('./tools/hostIP') }:4200/`,
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
